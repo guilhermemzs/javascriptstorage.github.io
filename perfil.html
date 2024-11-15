@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profile">
+        <h2>Perfil do Usuário</h2>
+        <p id="userName"></p>
+        <p id="userEmail"></p>
+        <p id="userPhone"></p>
+        <p id="userCPF"></p>
+    </div>
+
+    <script>
+        // Carrega os dados do usuário do localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (user) {
+            document.getElementById('userName').innerText = `Nome: ${user.name}`;
+            document.getElementById('userEmail').innerText = `Email: ${user.email}`;
+            document.getElementById('userPhone').innerText = `Telefone: ${user.phone}`;
+            document.getElementById('userCPF').innerText = `CPF: ${user.cpf}`;
+        }
+    </script>
+</body>
+</html>
